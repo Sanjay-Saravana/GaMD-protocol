@@ -2,11 +2,11 @@
 
 ### **Step 1:** get PDB structure:
 ```bash
-wget https://files.rcsb.org/download/XXXX.pdb
+wget https://files.rcsb.org/download/1UAO.pdb
 ```
 
 > [!NOTE]
-> XXXX &rarr; PDB ID
+> eg: 1UAO &rarr; PDB ID
 
 ### **Step 2:** Generate Topology:
 ```bash
@@ -19,3 +19,8 @@ gmx pdb2gmx -f 1UAO.pdb -o processed.gro -ignh
 **Output:**
 * processed.gro
 * topol.top
+
+### **Step 3:** Define simulation box:
+```bash
+gmx editconf -f processed.gro -o box.gro -c -d 1.0 -bt cubic
+```
