@@ -36,3 +36,6 @@ gmx grompp -f mdp/ions.mdp -c solv.gro -p topol.top -o ions.tpr
 ```
 > [!NOTE]
 > All mdp files used here are available inside the mdp directory of this repository
+```bash
+gmx_mpi genion -s ions.tpr -o solv_ions.gro -p topol.top -pname NA -nname CL -neutral
+```
