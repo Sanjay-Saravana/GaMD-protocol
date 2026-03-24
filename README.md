@@ -32,5 +32,7 @@ gmx solvate -cp box.gro -cs spc216.gro -o solv.gro -p topol.top
 
 ### **Step 5:** Add ions (neutralize system)
 ```bash
-gmx grompp -f ions.mdp -c solv.gro -p topol.top -o ions.tpr
+gmx grompp -f mdp/ions.mdp -c solv.gro -p topol.top -o ions.tpr
 ```
+> [!NOTE]
+> All mdp used here are available inside mdp directory of this repository
