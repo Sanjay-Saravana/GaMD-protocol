@@ -35,4 +35,4 @@ gmx solvate -cp box.gro -cs spc216.gro -o solv.gro -p topol.top
 gmx grompp -f mdp/ions.mdp -c solv.gro -p topol.top -o ions.tpr
 ```
 > [!NOTE]
-> All mdp used here are available inside mdp directory of this repository
+> All mdp files used here are available inside the mdp directory of this repository
