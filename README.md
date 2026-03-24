@@ -24,3 +24,8 @@ gmx pdb2gmx -f 1UAO.pdb -o processed.gro -ignh
 ```bash
 gmx editconf -f processed.gro -o box.gro -c -d 1.0 -bt cubic
 ```
+
+### **Step 4:** Solvate
+```bash
+gmx solvate -cp box.gro -cs spc216.gro -o solv.gro -p topol.top
+```
