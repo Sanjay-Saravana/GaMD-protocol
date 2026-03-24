@@ -6,7 +6,7 @@ wget https://files.rcsb.org/download/XXXX.pdb
 ```
 
 > [!NOTE]
-> Note: XXXX $ \rightarrow $ PDB ID
+> XXXX -> PDB ID
 
 ### **Step 2:** Generate Topology:
 ```bash
