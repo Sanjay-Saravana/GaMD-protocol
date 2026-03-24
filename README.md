@@ -29,3 +29,8 @@ gmx editconf -f processed.gro -o box.gro -c -d 1.0 -bt cubic
 ```bash
 gmx solvate -cp box.gro -cs spc216.gro -o solv.gro -p topol.top
 ```
+
+### **Step 5:** Add ions (neutralize system)
+```bash
+gmx grompp -f ions.mdp -c solv.gro -p topol.top -o ions.tpr
+```

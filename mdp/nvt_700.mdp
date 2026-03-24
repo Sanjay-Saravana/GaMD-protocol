@@ -1,0 +1,25 @@
+integrator      = md
+dt              = 0.002
+nsteps          = 50000
+
+tcoupl          = V-rescale
+tc-grps         = System
+tau_t           = 0.1
+ref_t           = 700
+
+constraints             = h-bonds
+constraint_algorithm    = lincs
+
+cutoff-scheme   = Verlet
+nstlist         = 10
+
+coulombtype     = PME
+rcoulomb        = 0.8
+rvdw            = 0.8
+
+pbc             = xyz
+
+; Output control
+nstxout-compressed = 1000
+nstenergy          = 1000
+nstlog             = 1000
