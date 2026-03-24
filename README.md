@@ -4,16 +4,16 @@
 ```bash
 wget https://files.rcsb.org/download/XXXX.pdb
 ```
-XXXX -> PDB ID
+> Note: XXXX -> PDB ID
 
 ### **Step 2:** Generate Topology:
 ```bash
 gmx pdb2gmx -f 1UAO.pdb -o processed.gro -ignh
 ```
-Choose:
+**Choose:**
 * Force field
 * Water
 
-Output:
+**Output:**
 * processed.gro
 * topol.top
