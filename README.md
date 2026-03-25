@@ -63,6 +63,6 @@ gmx mdrun -deffnm nvt_700
 
 ### **Step 8:** Production
 ```bash
-gmx_mpi grompp -f mdp/prod_700.mdp -c nvt_700.gro -p topol.top -o prod_700.tpr
-gmx_mpi mdrun -deffnm prod_700
+gmx grompp -f mdp/prod_700.mdp -c nvt_700.gro -p topol.top -o prod_700.tpr
+gmx mdrun -deffnm prod_700
 ```
