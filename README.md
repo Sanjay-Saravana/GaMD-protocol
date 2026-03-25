@@ -29,6 +29,8 @@ gmx editconf -f processed.gro -o box.gro -c -d 1.0 -bt cubic
 ```bash
 gmx solvate -cp box.gro -cs tip3p.gro -o solv.gro -p topol.top
 ```
+> [!NOTE]
+> -cs &rarr; ex: tip3p.gro, you can choose any solvent as per your forcefield.
 
 ### **Step 5:** Add ions (neutralize system)
 ```bash
