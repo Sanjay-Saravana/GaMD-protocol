@@ -69,7 +69,7 @@ gmx grompp -f mdp/prod_700.mdp -c nvt_700.gro -p topol.top -o prod_700.tpr
 gmx mdrun -deffnm prod_700
 ```
 > [!IMPORTANT]  
-> Select highly extended strucure based on Rg or end-end distance in case of chignolin for GaMD.
+> Select highly extended structure based on Rg or end-end distance in case of chignolin for GaMD.
 
 ### **Step 9:** Run GaMD:
 ```bash
