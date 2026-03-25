@@ -1,5 +1,11 @@
 # GaMD-protocol
 
+### **Dependencies:**
+* wget
+* Gromacs
+* python3
+* [gamd-openmm](https://github.com/MiaoLab20/gamd-openmm)
+
 ### **Step 1:** Get PDB structure
 ```bash
 wget https://files.rcsb.org/download/1UAO.pdb
