@@ -68,3 +68,10 @@ gmx mdrun -deffnm nvt_700
 gmx grompp -f mdp/prod_700.mdp -c nvt_700.gro -p topol.top -o prod_700.tpr
 gmx mdrun -deffnm prod_700
 ```
+
+### **Step 9:** Run GaMD:
+```bash
+gamdRunner xml input.xml -p CUDA -d 0 -o gamd
+```
+> [!NOTE]
+> example xml file provided in this repository.
