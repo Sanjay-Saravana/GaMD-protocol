@@ -75,10 +75,10 @@ gmx editconf -f processed.gro -o box.gro -c -d 1.0 -bt cubic
 
 ### **4. Solvate system**
 ```bash
-gmx solvate -cp box.gro -cs tip3p.gro -o solv.gro -p topol.top
+gmx solvate -cp box.gro -cs spc216.gro -o solv.gro -p topol.top
 ```
 
-> Ensure the solvent model (`tip3p.gro`) is consistent with the chosen force field.
+> Ensure the solvent model (`spc216.gro`) is consistent with the chosen force field.
 
 ---
 
