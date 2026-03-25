@@ -27,7 +27,7 @@ gmx editconf -f processed.gro -o box.gro -c -d 1.0 -bt cubic
 
 ### **Step 4:** Solvate
 ```bash
-gmx solvate -cp box.gro -cs spc216.gro -o solv.gro -p topol.top
+gmx solvate -cp box.gro -cs tip3p.gro -o solv.gro -p topol.top
 ```
 
 ### **Step 5:** Add ions (neutralize system)
@@ -42,4 +42,27 @@ gmx genion -s ions.tpr -o solv_ions.gro -p topol.top -pname NA -nname CL -neutra
 ```bash
 gmx grompp -f mdp/minim.mdp -c solv_ions.gro -p topol.top -o em.tpr
 gmx mdrun -deffnm em
+```
+### **Step 7:** Run heating steps
+```bash
+gmx grompp -f mdp/nvt_300.mdp -c em.gro -p topol.top -o nvt_300.tpr
+gmx mdrun -deffnm nvt_300
+
+gmx grompp -f mdp/nvt_400.mdp -c nvt_300.gro -p topol.top -o nvt_400.tpr
+gmx mdrun -deffnm nvt_400
+
+gmx grompp -f mdp/nvt_500.mdp -c nvt_400.gro -p topol.top -o nvt_500.tpr
+gmx mdrun -deffnm nvt_500
+
+gmx grompp -f mdp/nvt_600.mdp -c nvt_500.gro -p topol.top -o nvt_600.tpr
+gmx mdrun -deffnm nvt_600
+
+gmx grompp -f mdp/nvt_700.mdp -c nvt_600.gro -p topol.top -o nvt_700.tpr
+gmx mdrun -deffnm nvt_700
+```
+
+### **Step 8:** Production
+```bash
+gmx_mpi grompp -f mdp/prod_700.mdp -c nvt_700.gro -p topol.top -o prod_700.tpr
+gmx_mpi mdrun -deffnm prod_700
 ```
