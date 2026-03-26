@@ -136,6 +136,14 @@ gmx mdrun -deffnm prod_700
 - High-temperature simulation helps explore unfolded conformations
 - Useful for generating initial structures for GaMD
 
+**Trajectory preprocessing**
+```bash
+gmx trjconv -f prod_700.xtc -s prod_700.tpr -o noPBC.xtc -pbc mol -center
+```
+**Radius of Gyration (Rg)**
+```bash
+gmx gyrate -f noPBC.xtc -s topol.tpr -o rg.xvg
+```
 ---
 
 ### **9. Select extended structure**
