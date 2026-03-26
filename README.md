@@ -171,7 +171,7 @@ print("Time at max Rg:", max_time)
 ```
 **Extract extended structure**
 ```bash
-gmx trjconv -f noPBC.xtc -s topol.tpr -o extended.pdb -dump <max_time>
+gmx trjconv -f noPBC.xtc -s topol.tpr -o extended.gro -dump <max_time>
 ```
 > [!NOTE]
 > max_time is in ps
