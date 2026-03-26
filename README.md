@@ -169,7 +169,10 @@ max_time = time[max_idx]
 print("Max Rg:", max_rg)
 print("Time at max Rg:", max_time)
 ```
-
+**extrect the structure**
+```bash
+gmx trjconv -f noPBC.xtc -s topol.tpr -o extended.pdb -dump <max_time>
+```
 ---
 
 ### **10. Run GaMD (OpenMM)**
