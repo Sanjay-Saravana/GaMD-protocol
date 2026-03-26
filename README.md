@@ -155,7 +155,7 @@ Typical metrics:
 ```bash
 gmx gyrate -f noPBC.xtc -s prod_700.tpr -o rg.xvg
 ```
-To get extended structure:
+**Identify most extended frame (max Rg)**
 ```python
 rg = np.loadtxt("rg.xvg", comments=['#', '@'])
 
@@ -169,10 +169,12 @@ max_time = time[max_idx]
 print("Max Rg:", max_rg)
 print("Time at max Rg:", max_time)
 ```
-**extrect the structure**
+**Extract extended structure**
 ```bash
 gmx trjconv -f noPBC.xtc -s topol.tpr -o extended.pdb -dump <max_time>
 ```
+> [!NOTE]
+> max_time is in ps
 ---
 
 ### **10. Run GaMD (OpenMM)**
