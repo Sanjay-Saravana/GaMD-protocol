@@ -142,7 +142,7 @@ gmx trjconv -f prod_700.xtc -s prod_700.tpr -o noPBC.xtc -pbc mol -center
 ```
 **Radius of Gyration (Rg)**
 ```bash
-gmx gyrate -f noPBC.xtc -s topol.tpr -o rg.xvg
+gmx gyrate -f noPBC.xtc -s prod_700.tpr -o rg.xvg
 ```
 ---
 
