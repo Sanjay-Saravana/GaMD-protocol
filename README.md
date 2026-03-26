@@ -140,10 +140,6 @@ gmx mdrun -deffnm prod_700
 ```bash
 gmx trjconv -f prod_700.xtc -s prod_700.tpr -o noPBC.xtc -pbc mol -center
 ```
-**Radius of Gyration (Rg)**
-```bash
-gmx gyrate -f noPBC.xtc -s prod_700.tpr -o rg.xvg
-```
 ---
 
 ### **9. Select extended structure**
@@ -155,6 +151,24 @@ Typical metrics:
 - End-to-end distance
 
 > For systems like **chignolin**, choosing a maximally extended structure improves GaMD sampling efficiency.
+**Radius of Gyration (Rg)**
+```bash
+gmx gyrate -f noPBC.xtc -s prod_700.tpr -o rg.xvg
+```
+To get extended structure:
+```python
+rg = np.loadtxt("rg.xvg", comments=['#', '@'])
+
+time = prod_700_rg[:, 0]
+rg   = prod_700_rg[:, 1]
+
+max_idx = np.argmax(rg)   # index of max Rg
+max_rg = rg[max_idx]
+max_time = time[max_idx]
+
+print("Max Rg:", max_rg)
+print("Time at max Rg:", max_time)
+```
 
 ---
 
